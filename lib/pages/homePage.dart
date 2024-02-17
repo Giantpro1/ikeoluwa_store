@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ikeoluwa_store/widgets/HomeAppBar.dart';
 import 'package:ikeoluwa_store/widgets/categoriesWidget.dart';
+import 'package:ikeoluwa_store/widgets/itemsWidget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +13,7 @@ class HomePage extends StatelessWidget {
         children: [
           const HomeAppBar(),
           Container(
-            height: 500,
+            // height: 500,
             padding: const EdgeInsets.only(top: 15),
             decoration: const BoxDecoration(
               color: Color(0xFFEDECF2),
@@ -67,7 +68,21 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              const CategoriesWidget()
+              const CategoriesWidget(),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin:
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                child: const Text(
+                  "Best Selling Products",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF4C53A5),
+                  ),
+                ),
+              ),
+              const ItemsWidget(),
             ]),
           )
         ],
