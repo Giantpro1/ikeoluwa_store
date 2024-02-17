@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikeoluwa_store/widgets/HomeAppBar.dart';
+import 'package:ikeoluwa_store/widgets/categoriesWidget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -52,15 +53,21 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Container(
+                alignment: Alignment.centerLeft,
                 margin: const EdgeInsets.symmetric(
                   vertical: 20,
                   horizontal: 10,
                 ),
                 child: const Text(
                   "Category",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF4C53A5),
+                  ),
                 ),
               ),
+              const CategoriesWidget()
             ]),
           )
         ],
