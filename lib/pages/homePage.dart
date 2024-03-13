@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ikeoluwa_store/widgets/HomeAppBar.dart';
 import 'package:ikeoluwa_store/widgets/categoriesWidget.dart';
 import 'package:ikeoluwa_store/widgets/itemsWidget.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -85,6 +87,29 @@ class HomePage extends StatelessWidget {
               const ItemsWidget(),
             ]),
           )
+        ],
+      ),
+      bottomNavigationBar: CurvedNavigationBar(
+        color: const Color(0xFF4C53A5),
+        onTap: (index) {},
+        height: 70,
+        backgroundColor: Colors.transparent,
+        items: const [
+          Icon(
+            Icons.home,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            CupertinoIcons.cart_fill,
+            size: 30,
+            color: Colors.white,
+          ),
+          Icon(
+            Icons.list,
+            size: 30,
+            color: Colors.white,
+          ),
         ],
       ),
     );
