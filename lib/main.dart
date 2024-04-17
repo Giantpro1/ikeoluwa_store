@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ikeoluwa_store/pages/HomePage.dart';
+import 'package:ikeoluwa_store/pages/cartPage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      routes: {"/": (context) => const HomePage()},
+      routes: {
+        "/": (context) => const HomePage(),
+        "cartPage": (context) => const CartPage(),
+      },
     );
   }
 }

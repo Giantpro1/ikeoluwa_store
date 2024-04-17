@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 
-// import 'package:badges/badges.dart';
+import 'package:badges/badges.dart' as badges;
+
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       padding: const EdgeInsets.all(45),
-      child: const Row(
+      child: Row(
         children: [
-          Icon(
+          const Icon(
             Icons.sort,
             size: 30,
             color: Color(0xFF4c53A5),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(
               left: 20,
             ),
@@ -30,22 +30,38 @@ class HomeAppBar extends StatelessWidget {
               ),
             ),
           ),
-          Spacer(),
-          Badge(
-            backgroundColor: Colors.red,
-            // badgeContent : Text('3'),
-            padding: EdgeInsets.all(7),
+          const Spacer(),
+          badges.Badge(
+            // position: badges.BadgePosition.topEnd(top: 0, end: 3),
+            badgeAnimation: const badges.BadgeAnimation.slide(
+              disappearanceFadeAnimationDuration: Duration(milliseconds: 200),
+              curve: Curves.easeInCubic,
+            ),
+            // showBadge: _showCartBadge,
+            badgeStyle: const badges.BadgeStyle(
+              badgeColor: Colors.red,
+            ),
+            badgeContent: const Text(
+              '3',
+              style: TextStyle(color: Colors.white),
+            ),
             child: InkWell(
-              // onTap: (){},
-              child: Icon(
+              onTap: () {
+                Navigator.pushNamed(
+                    context, cartPageRoute); // Using cartPageRoute here
+              },
+              child: const Icon(
                 Icons.shopping_bag_outlined,
                 size: 30,
-                color: Color(0xFF4c53A5),
+                color: Color(0xFF4c53A5), // Deep purple color
               ),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 }
+
+const String cartPageRoute =
+    "cartPage"; // Define the route name as a constant string
